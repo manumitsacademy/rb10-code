@@ -1,0 +1,24 @@
+<html>
+	<body>
+		<h1>Hello World</h1>
+		<p>
+			Ite endi lets see understan
+		</p>
+		<script>	
+		
+			console.log("hi");
+			
+			var http = new XMLHttpRequest();
+			console.log(http.readyState)
+			http.addEventListener("readystatechange",function(){
+				if(http.readyState===4){
+					console.log(http.response)
+				}				
+			})
+			
+			http.open("GET","http://restcountries.eu/rest/v2/all/");
+			http.send();
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <h1 id="d2"></h1>
+        <button onclick="stopclock()">Stop</button>
+        <button onclick="startclock()">Start</button>
+        <script>            
+
+            var x = setInterval(function(){
+                        var d1 = new Date();
+                        var hours = d1.getHours();
+                        var minutes = d1.getMinutes();
+                        var sec = d1.getSeconds();
+                        var msec = d1.getMilliseconds()
+                        document.getElementById("d2").innerHTML = hours+":"+minutes+":"+sec+":"+msec;
+                    },100);
+
+            function startclock(){
+                x = setInterval(function(){
+                        var d1 = new Date();
+                        var hours = d1.getHours();
+                        var minutes = d1.getMinutes();
+                        var sec = d1.getSeconds();
+                        document.getElementById("d2").innerHTML = hours+":"+minutes+":"+sec;
+                    },1000);
+            }
+            function stopclock(){
+                clearInterval(x);
+            }
+        </script>
+    </body>
+</html>

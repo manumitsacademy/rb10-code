@@ -1,0 +1,17 @@
+<html>
+	<body>
+		<script>
+			function abc(a,b){
+				a();
+				b();
+				return function(){}
+			}
+			
+			
+			abc(function(){console.log("fun1")},
+			function(){console.log("fun2")});
+			
+			
+		</script>
+	</body>
+</html>

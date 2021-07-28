@@ -1,0 +1,81 @@
+<html>
+    <body>
+       
+        <ul>
+            <li>india</li>
+            <li>USA</li>
+            <li>Russia</li>
+        </ul>
+
+        <ol id="d3">
+            
+        </ol>
+        <div id="d7">
+
+        </div>
+        <table border="1" cellpadding="10"> 
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Place</th>
+            </thead>
+            <tbody id="dd">
+                
+            </tbody>
+        </table>
+        <script>
+
+        var j = ['dog','cat','tiger','lion'];
+
+        var countries = ["sweden",'italy','france']
+
+        countries.forEach(function(c,i){
+            var n = document.createElement("li");
+            n.innerHTML = c;
+            var k = document.getElementById("d3");
+            k.appendChild(n)
+        })            
+
+        var mydetails = {
+            firstname:'praveen',
+            lastname:'gubbala',
+            age:36,
+            place:'hyd'
+        }
+
+      
+
+        var students = [
+            {
+                firstname:'praveen',
+                lastname:'gubbala',
+                age:36,
+                place:'hyd'
+            },
+            {
+                firstname:'srikant',
+                lastname:'gubbala',
+                age:26,
+                place:'blg'
+            },
+            {
+                firstname:'rahul',
+                lastname:'reddy',
+                age:29,
+                place:'mumbai'
+            }
+        ]
+
+        students.forEach(function(s,i){
+            var newrow = document.createElement("tr");
+            for(var k in s){
+                var newtd = document.createElement("td");
+                newtd.innerHTML = s[k];
+                newrow.appendChild(newtd)
+            }
+            document.getElementById("dd").appendChild(newrow)
+        })
+        </script>
+    </body>
+</html>

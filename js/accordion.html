@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chapterdescription{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        chapter1
+    </h1>
+    <p class="chapterdescription">
+        dable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like
+    </p>
+    <h1>
+        chapter2
+    </h1>
+    <p class="chapterdescription">
+        e editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the likee editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like
+    </p>
+    <h1>
+        chapter333
+    </h1>
+    <p class="chapterdescription">
+         web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like
+    </p>
+    <script>
+        function showdesc(e){
+            if(e.target.nextElementSibling.style.display==="block"){
+                e.target.nextElementSibling.style.display="none";
+            }
+            else{
+                e.target.nextElementSibling.style.display="block";
+            }
+        }
+        // var chaptitles = document.getElementsByTagName("h1");
+        // for(var i=0;i<=chaptitles.length-1;i++){
+        //     //chaptitles[i].addEventListener("click",showdesc)
+        //     chaptitles[i].onclick = showdesc;
+        // }
+        var chtitles = document.querySelectorAll('h1');
+        chtitles.forEach(function(el,i){
+            el.onclick = showdesc;
+        })
+    </script>
+</body>
+</html>

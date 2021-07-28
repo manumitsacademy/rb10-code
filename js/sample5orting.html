@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Table with Sorting</title>
+</head>
+<body>
+	<table class="table">
+		<thead>
+			<th>S.No</th>
+			<th onclick="sortyby('name');">Name</th>
+			<th onclick="sortyby('dob');">Date of Birth</th>
+			<th onclick="sortyby('place');">Place</th>
+		</thead>
+		<tbody id="dd">
+			
+		</tbody>
+	</table>
+</body>
+<script>
+	var students = [
+		{
+			name:"vijay",
+			dob:"2001-3-25",
+			place:"Hyderabad"
+		},
+		{
+			name:"Naveen",
+			dob:"2004-5-15",
+			place:"Bangalore"
+		},
+		{
+			name:"Gajam",
+			dob:"1995-7-20",
+			place:"Puttapaka"
+		},
+		{
+			name:"Krish",
+			dob:"2009-2-30",
+			place:"Nalgonda"
+		},
+		{
+			name:"Amar",
+			dob:"1995-11-5",
+			place:"Nalgonda"
+		}
+	];
+
+	table();
+	function table(){
+		students.forEach(function(s,i){
+			var newTR = document.createElement("tr");
+			var sTD = document.createElement("td");
+			sTD.innerHTML=i+1;
+			newTR.appendChild(sTD);
+			for(var k in s){
+				var newTD = document.createElement("td");
+				newTD.innerHTML=s[k];
+				newTR.appendChild(newTD);	
+				document.getElementById("dd").appendChild(newTR);
+			}
+
+		})
+	}
+	
+	function sortyby(k){
+		
+		document.getElementById("dd").innerHTML='';
+		students.sort(function(a,b){
+			if(Date.parse(a[k])>Date.parse(b[k])){
+				return 1
+			}
+			else
+			{
+				return -1
+			}
+		})
+		table();
+	}
+
+	console.log(students);
+</script>
+</html>

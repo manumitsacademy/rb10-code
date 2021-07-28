@@ -1,0 +1,32 @@
+<html>
+    <script>
+        var a = ["praveen","gubbala","gachibowli",36,38,"MTech"];
+
+        var b = {
+                    "firstname":"praveen",
+                    "lastname":"gubbala",
+                    "place":"gachibowli",
+                    "waist":36,
+                    "age":38,
+                    "qualification":"MTech"                    
+                }
+        console.log(a[3]);
+        console.log(b.lastname)
+        console.log(b.qualification)
+
+        console.log(b['age'])
+
+        var k = 'place';
+        console.log(b.place)
+        console.log(b['place'])
+        console.log(b[k]);
+
+        var w = 'waist';
+
+        for( var h in b)
+        {
+            console.log("HI",h,b[h])
+        }
+            
+    </script>
+</html>

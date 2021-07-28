@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="abc(event)">click me</button>
+    
+    <button id="d1">another way of binding event listeners</button>
+    
+    <button id="d2">one more way of event handling</button>
+    <h1>
+        event,eventListener,eventhandler,eventbinding,eventobject
+    </h1>
+    <script>
+        function abc(e){
+            console.dir(e);
+        }
+
+        var el1 = document.getElementById("d1");
+        el1.addEventListener("click",function(ev){
+            console.dir(ev)
+        })
+
+        var el2 = document.getElementById("d2");
+        el2.onclick = function(eve){
+            console.dir(eve)
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <script>
+        
+        
+        function add(a,b,c){
+            var x = a+b;
+            c(x);
+        }//first-class-functions
+
+        add(12,23,function(res){console.log(res)});
+        
+        function sub(x,y,z){            
+            z(x-y);
+        }
+
+        sub(19,2,function(res){console.log(res)});
+
+        function multiply(a,b,c){
+            c(a*b)
+        }
+
+        multiply(12,5,function(res){console.log(res)})
+
+        function div(a,b,c){
+            if(b===0){
+                c("Denominator cannot be zero",null)
+            }
+            else{
+                c(null,a/b);
+            }
+        }
+
+        
+    </script>
+</html>

@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/@reactivex/rxjs@6.0.0/dist/global/rxjs.umd.js"></script>
+    </head>
+    <body>
+        <h1>My Home Page</h1>
+        <button onclick="addStudent()">Save</button>
+        <button id="d1">Delete Student</button>
+        <button id="d2">Edit Student</button>
+        <script>
+            
+            document.getElementById("d1").addEventListener("click",function(){
+                console.log("clicked on delete student button")
+            })
+           
+            editbtn = document.getElementById("d2");
+            rxjs.fromEvent(editbtn,'click').pipe(
+                rxjs.operators.throttleTime(2000)
+            ).subscribe(()=>{
+                console.log("Clicked on Edit student button")
+            })
+        </script>
+    </body>
+</html>

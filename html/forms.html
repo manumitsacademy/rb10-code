@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <form action="https://naistam.in/edoform.jsp" method="post">
+       <label>First Name:</label>
+       <input type="text" placeholder="Please enter firstname" name="fn">        <br/>
+       Last Name: <input type="text" placeholder="please enter lastname" name="ln"> <br/>
+       Password:<input type="password"><br/>
+       Mobile Number:<input type="number"><br/>
+       email:<input type="email" required><br/>
+       
+       Date of Birth:<input type="date" /><br>
+       
+       gender:
+       <input type="radio" name="gen" value="male">Male
+       <input type="radio" name="gen" value="female">Female
+       <input type="radio" name="gen" value="others">Others
+       <br>
+       Technologies:
+       <input type="checkbox" name="tech" value="node">NodeJS
+       <input type="checkbox" name="tech" value="ang">Angular
+       <input type="checkbox" name="tech" value="rjs">ReactJS
+       <input type="checkbox" name="tech" value="mdb">MongoDB
+       <input type="checkbox" name="tech" value="pug">Pug
+       <input type="checkbox" name="tech" value="exp">ExpressJS
+       <input type="checkbox" name="tech" value="java">Java
+       <br/>
+       <select name="state" multiple>
+         <option value="TG">Telangana</option>
+         <option value="AP">Andhrapradesh</option>
+         <option value="GA">Goa</option>
+         <option value="KA">Karnataka</option>
+       </select>
+       <textarea></textarea><br/>
+       <button>
+         Save
+       </button>
+    </form>
+        
+  </body>
+</html>

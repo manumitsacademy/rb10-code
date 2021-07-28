@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <h1 class="singer">kumar sanu</h1>
+        <h4>Balugaru</h4>
+        <h4 class="singer">Chitra</h4>
+        <a href="http://vlrtraining.in">Vlr</a>
+        <input type="text" id="d1" value="praveen">
+        <button>Lets see</button>
+        <ul>
+            <li>india</li>
+            <li>USA</li>
+            <li>Russia</li>
+        </ul>
+        <ol id="d3">
+            
+        </ol>
+        <script>
+
+            var countries = ["sweden",'italy','france']
+
+            countries.forEach(function(c,i){
+                var n = document.createElement("li");
+                console.log(n);
+            })            
+
+            var k = document.getElementsByTagName("li");           
+            console.log(k);
+            for(var i=0;i<=k.length-1;i++){
+                console.log(k[i].innerHTML)
+            }
+           
+            var h = document.querySelectorAll("li");
+            console.dir(h);
+            for(var j=0;j<=h.length-1;j++){
+                console.log(h[j].innerHTML)
+            }
+            h.forEach(function(elem,i){
+                console.log(elem.innerHTML)
+            })
+        </script>
+    </body>
+</html>

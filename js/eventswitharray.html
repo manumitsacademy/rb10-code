@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            #d1{               
+                width:200px;
+                height:100px; 
+                border: 1px solid;        
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="d1">
+
+        </div>
+        <button onclick="nextitem()">Show Next</button>
+        
+        <script>
+            var ar = ['kiran','sam','janu','vijay'];
+            document.getElementById("d1").innerHTML = ar[0];
+            i=1;
+           function nextitem(){
+               var x = document.getElementById("d1");
+               x.innerHTML = ar[i];
+               if(i<3){
+                i++;
+               }
+               else{
+                   i=0;
+               }
+           }
+        </script>
+    </body>
+</html>   
+
