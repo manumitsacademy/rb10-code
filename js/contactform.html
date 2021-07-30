@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div style="display: flex;justify-content: space-around;">
+        <div>
+            <form name="regform" action="abc.php" onsubmit="save(event)">
+                <label for="firstname">First Name</label>        <input type="text" name="firstname" id="firstname"><br/>
+                <label for="lastname">Last Name</label>        <input type="text" name="lastname" id="lastname"><br/>
+                <label for="mobile">Mobile</label>        <input type="text" name="mobile" id="mobile"><br/>
+                <label for="email">email</label>        <input type="text" name="email" id="email"><br/>
+                <label>Courses</label><br/>
+                <input type="checkbox" name="course" value="html">HTML<br/>
+                <input type="checkbox" name="course" value="css">CSS<br/>
+                <input type="checkbox" name="course" value="Bootstrap">Bootstrap<br/>
+                <input type="checkbox" name="course" value="js">ReactJS<br/> 
+                <input type="checkbox" name="course" value="node">NodeJS<br/>
+                <label>Join Type:</label><br/>
+                <input type='radio' name="jointype" value="online">Online</br>
+                <input type='radio' name="jointype" value="offline">OFFline</br>        
+                <input type='radio' name="jointype" value="recordingonly">Recordings only</br>
+                <label>Place:</label>
+                <select name="place">
+                    <option value="kphb">KPHB</option>
+                    <option value="hc">Hitechcity</option>
+                    <option value="amp">Ameerpet</option>
+                    <option value="upl">Uppal</option>
+                </select>
+                <button>Save</button>        
+            </form>
+        </div>
+        <div>
+            <table border="2" cellpadding="0">
+                <thead>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>mobile</th>
+                    <th>email</th>
+                    <th>Courses</th>
+                    <th>Jointype</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script>
+        var students = [
+            {
+                
+            }
+        ]
+        function save(e){
+            e.preventDefault();
+            console.dir(document.regform.firstname.value);
+            console.dir(document.regform.lastname.value);
+            console.dir(document.regform.mobile.value);
+            console.dir(document.regform.email.value);
+            for(var i=0;i<=document.regform.course.length-1;i++){
+                if(document.regform.course[i].checked===true){
+                    console.log(document.regform.course[i].value)
+                }
+            }
+            console.dir(document.regform.jointype.value);
+            console.dir(document.regform.place.value);
+        }
+    </script>
+</body>
+</html>
