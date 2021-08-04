@@ -19,7 +19,7 @@
                 <input type="checkbox" name="course" value="html">HTML<br/>
                 <input type="checkbox" name="course" value="css">CSS<br/>
                 <input type="checkbox" name="course" value="Bootstrap">Bootstrap<br/>
-                <input type="checkbox" name="course" value="js">ReactJS<br/> 
+                <input type="checkbox" name="course" value="reactjs">ReactJS<br/> 
                 <input type="checkbox" name="course" value="node">NodeJS<br/>
                 <label>Join Type:</label><br/>
                 <input type='radio' name="jointype" value="online">Online</br>
@@ -44,29 +44,45 @@
                     <th>email</th>
                     <th>Courses</th>
                     <th>Jointype</th>
+                    <th>Place</th>
                 </thead>
+                <tbody id="studentstable">
+
+                </tbody>
             </table>
         </div>
     </div>
     <script>
-        var students = [
-            {
-                
-            }
-        ]
+        var students = [];
         function save(e){
             e.preventDefault();
-            console.dir(document.regform.firstname.value);
-            console.dir(document.regform.lastname.value);
-            console.dir(document.regform.mobile.value);
-            console.dir(document.regform.email.value);
+            var newstudent = {};
+            newstudent.firstname = document.regform.firstname.value;
+            newstudent.lastname = document.regform.lastname.value;
+            newstudent.mobile = document.regform.mobile.value;
+            newstudent.email =  document.regform.email.value;
+            newstudent.courses = [];
             for(var i=0;i<=document.regform.course.length-1;i++){
                 if(document.regform.course[i].checked===true){
-                    console.log(document.regform.course[i].value)
+                    newstudent.courses.push(document.regform.course[i].value)
                 }
             }
-            console.dir(document.regform.jointype.value);
-            console.dir(document.regform.place.value);
+            newstudent.jointype = document.regform.jointype.value;
+            newstudent.place = document.regform.place.value;    
+            students.push(newstudent); 
+            genUI();  
+        }
+        function genUI(){
+            document.getElementById("studentstable").innerHTML="";
+            students.forEach(function(s,i){
+                var newtr = document.createElement("tr");
+                for(var k in s){
+                    var newtd = document.createElement('td');
+                    newtd.innerHTML = s[k];
+                    newtr.appendChild(newtd);                    
+                }
+                document.getElementById("studentstable").appendChild(newtr)
+            })
         }
     </script>
 </body>
