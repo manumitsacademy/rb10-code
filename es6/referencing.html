@@ -1,0 +1,31 @@
+<html>
+    <script>
+        var ar = [12,62,34,18,28];
+        var br;
+        br = ar;       
+        var cr = [];
+        for(var i=0;i<=ar.length-1;i++){
+            cr[i]=ar[i]
+        }
+        var dr = [];
+        ar.forEach(function(x,i){
+            dr[i]=x;
+        })
+        var er = [];
+        er = ar.map(function(n,i){
+            return n;
+        })
+        var fr = [];
+        fr = ar.filter(function(n,i){
+            return true;
+        })
+      
+        console.log("ar::",ar)
+        console.log("br::",br)
+        console.log("cr::",cr)
+        console.log("dr::",dr)
+        console.log("er::",er)
+        console.log("fr::",fr)
+        
+    </script>
+</html>

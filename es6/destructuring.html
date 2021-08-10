@@ -1,0 +1,23 @@
+<html>
+    <script>
+      
+        var mydetails= {
+                        firstname: "praveen",
+                        lastname: "gubbala", 
+                        dob: 109822,                          
+                        mobilenumber: 12121212,
+                        techs:['reactjs','angularjs','nodejs'],
+                        address:{
+                            flatno:124,
+                            building:'c-block',
+                            street:'westernhills',
+                            pincode:500008
+                        }
+                    }
+
+        var { firstname:fn,address:{street} } = mydetails;
+
+        console.log(street)
+    </script>
+</html>
+enhanced object literals
