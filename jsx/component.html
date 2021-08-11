@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1">
+
+        </div>
+        <script type="text/babel">
+            class StudentsList extends React.Component{
+                constructor(){
+                    super();
+                    this.state = {
+                        students:['praveen','anu','murali','pawan','swapna']
+                    }
+                }
+                render(){
+                    return(
+                        <div>
+                            <h1>List of Students</h1> 
+                            <ul>
+                                {
+                                    this.state.students.map((student,i)=>{
+                                        return (<li>{student}</li>)
+                                    })
+                                }
+                            </ul>   
+                        </div>
+                    )
+                }
+            }
+            ReactDOM.render(<StudentsList></StudentsList>,document.getElementById("d1"))
+        </script>
+    </body>
+</html>

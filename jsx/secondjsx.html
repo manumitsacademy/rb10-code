@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1">
+
+        </div>
+        <script type="text/babel">
+
+            class X extends React.Component{
+                render(){
+                    return(
+                        <div>
+                            <h1>Header</h1>
+                        </div>
+                    )
+                }
+            }
+
+            var Y = ()=>{
+                return (
+                    <div>                      
+                        <h1> Main Area </h1>                      
+                    </div>
+                )
+            }
+
+            class Z extends React.Component{
+                state
+                render(){
+                    return(
+                        <div>
+                            <h1>THis is Footer</h1>
+                        </div>
+                    )
+                }
+            }
+            var page =  <div>
+                            <X></X>
+                            <Y></Y>
+                            <Y></Y>
+                            <Y></Y>
+                            <Z></Z>
+                        </div>
+            ReactDOM.render(page,document.getElementById("d1"));
+        </script>
+    </body>
+</html>

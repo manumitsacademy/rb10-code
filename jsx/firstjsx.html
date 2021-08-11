@@ -10,11 +10,24 @@
         </div>
         <script type="text/babel">
             var students = ['himaja','tarun','bhaskar','priya'];
-            var x = <ul>
-                        
+            function deleteStudent(index){
+                students.splice(index,1);
+                genUI();
+            }
+            function genUI(){
+                var x = <ul>
+                        {
+                            students.map(function(s,i){
+                                return (<li>
+                                        {s}
+                                        <button onClick={function(i){deleteStudent(i)}}>Delete</button>
+                                    </li>)
+                            })
+                        }
                     </ul>;
-            ReactDOM.render(x,document.getElementById('d1'));
-
+                ReactDOM.render(x,document.getElementById('d1'));
+            }
+            genUI();
         </script>
     </body>
 </html>
