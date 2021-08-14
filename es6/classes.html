@@ -1,0 +1,31 @@
+<html>
+    <script>
+        class Common{
+            constructor(){
+                console.log("Common constructor called")
+            }
+            addMaintanance(){
+                console.log("Adding maintanance")
+            }
+        }
+        class Chair extends Common{
+            id;
+            chairtype;
+            dateofpurchase;
+            datesofMaintanence;
+            price;
+            constructor(){
+                super();
+                console.log("Chair Constructor called")
+            }
+            modifyChairType(){
+                console.log("modify chair");
+            }   
+        }
+
+            var newChair = new Chair();
+            
+
+        
+    </script>
+</html>

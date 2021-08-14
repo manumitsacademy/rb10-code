@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head> 
+    <body>
+        <div id="d1">
+
+        </div>
+        <script type="text/babel">
+            class Todolist extends React.Component{
+                constructor(){
+                    super();
+                    this.state = {
+                        tasks : ['hi','hello','jai'],
+                        filter:'completed'
+                    }
+                }
+                addTask = ()=>{
+                    var newtask = document.getElementById("d2").value;
+                    this.setState({tasks:[...this.state.tasks,newtask]})
+                }
+                render(){
+                    return (
+                        <div>
+                            <input type="text" id="d2"/>
+                            <button onClick={this.addTask}>Add Task</button>
+                            <ul>
+                                {
+                                    this.state.tasks.map((t)=>{
+                                        return (<li>{t}</li>)
+                                    })
+                                }    
+                            </ul>
+                        </div>
+                    )
+                }
+            }
+            ReactDOM.render(<Todolist></Todolist>,document.getElementById("d1"))
+        </script>
+    </body>
+</html>
