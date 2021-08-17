@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <style>
+            .betterview{
+                border:1px solid;
+                background-color: lightcoral;
+                padding:10px;
+                margin:10px;
+                min-height:200px;
+                min-width: 300px;
+            }
+            .betterviewgreen{
+                border:1px solid;
+                background-color: rgb(40, 207, 138);
+                padding:10px;
+                margin:10px;
+                min-height:200px;
+                min-width: 300px;
+            }
+        </style>
+    </head> 
+    <body>
+        <div id="d1">
+
+        </div>
+        <script type="text/babel">
+            class First extends React.Component{
+                constructor(){
+                    super();
+                    this.state = {
+                        students:[
+                            {
+                                firstname:'rahul',
+                                lastname:'reddy',
+                                place:'hyd'
+                            },
+                            {
+                                firstname:'tanvi',
+                                lastname:'sam',
+                                place:'sec'
+                            },
+                            {
+                                firstname:'shilpa',
+                                lastname:'chowd',
+                                place:'guntur'
+                            }
+                        ]
+                    }
+                }
+                render(){
+                    return(
+                        <div class="betterview">
+                            {
+                                this.state.students.map((s,i)=>{
+                                    return(<Student data={s}>
+                                        
+                                        </Student>)
+                                })
+                            }   
+                        </div>
+                    )
+                }
+            }
+            class Student extends React.Component{
+                render(){
+                    return(
+                        <div style={{border:'1px solid green',padding:'10px',margin:'10px'}}>
+                            Details
+                            <h1>{this.props.data.firstname} {this.props.data.lastname}</h1>    
+                            <h2>{this.props.data.place}</h2>                           
+                        </div>
+                    )
+                }
+            }
+            class Second extends React.Component{
+                constructor(){
+                    super();
+                }
+                render(){                    
+                    return(
+                        <div class="betterviewgreen">
+                            <h1>{this.props.yourname}</h1>
+                            <h2>{this.props.age}</h2>
+                            <h3>{JSON.stringify(this.props.address)}</h3>
+                        </div>
+                    )
+                }
+            }
+            ReactDOM.render(<First />,document.getElementById("d1"))
+        </script>
+    </body>
+</html>
