@@ -27,72 +27,7 @@
 
         </div>
         <script type="text/babel">
-            class First extends React.Component{
-                constructor(){
-                    super();
-                    this.state = {
-                        students:[
-                            {
-                                firstname:'rahul',
-                                lastname:'reddy',
-                                place:'hyd'
-                            },
-                            {
-                                firstname:'tanvi',
-                                lastname:'sam',
-                                place:'sec'
-                            },
-                            {
-                                firstname:'shilpa',
-                                lastname:'chowd',
-                                place:'guntur'
-                            }
-                        ]
-                    }
-                }
-                abc = (z)=>{
-                    console.log("Im abc",z)
-                }
-                render(){
-                    return(
-                        <div class="betterview">
-                            {
-                                this.state.students.map((s,i)=>{
-                                    return(<Student data={s} xyz={this.abc}>
-                                        
-                                        </Student>)
-                                })
-                            }   
-                        </div>
-                    )
-                }
-            }
-            class Student extends React.Component{
-                render(){
-                    return(
-                        <div style={{backgroundColor:"lightgreen",border:'1px solid green',padding:'10px',margin:'10px'}}>
-                            Details
-                            <h1>{this.props.data.firstname} {this.props.data.lastname}</h1>    
-                            <h2>{this.props.data.place}</h2> 
-                            <button onClick={()=>{this.props.xyz(this.props.data.firstname)}}>Lets call parent methods</button>                          
-                        </div>
-                    )
-                }
-            }
-            class Second extends React.Component{
-                constructor(){
-                    super();
-                }
-                render(){                    
-                    return(
-                        <div class="betterviewgreen">
-                            <h1>{this.props.yourname}</h1>
-                            <h2>{this.props.age}</h2>
-                            <h3>{JSON.stringify(this.props.address)}</h3>
-                        </div>
-                    )
-                }
-            }
+            
             ReactDOM.render(<First />,document.getElementById("d1"))
         </script>
     </body>
