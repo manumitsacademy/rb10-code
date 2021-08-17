@@ -50,12 +50,15 @@
                         ]
                     }
                 }
+                abc = (z)=>{
+                    console.log("Im abc",z)
+                }
                 render(){
                     return(
                         <div class="betterview">
                             {
                                 this.state.students.map((s,i)=>{
-                                    return(<Student data={s}>
+                                    return(<Student data={s} xyz={this.abc}>
                                         
                                         </Student>)
                                 })
@@ -67,10 +70,11 @@
             class Student extends React.Component{
                 render(){
                     return(
-                        <div style={{border:'1px solid green',padding:'10px',margin:'10px'}}>
+                        <div style={{backgroundColor:"lightgreen",border:'1px solid green',padding:'10px',margin:'10px'}}>
                             Details
                             <h1>{this.props.data.firstname} {this.props.data.lastname}</h1>    
-                            <h2>{this.props.data.place}</h2>                           
+                            <h2>{this.props.data.place}</h2> 
+                            <button onClick={()=>{this.props.xyz(this.props.data.firstname)}}>Lets call parent methods</button>                          
                         </div>
                     )
                 }
