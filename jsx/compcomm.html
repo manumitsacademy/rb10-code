@@ -3,32 +3,69 @@
         <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-        <style>
-            .betterview{
-                border:1px solid;
-                background-color: lightcoral;
-                padding:10px;
-                margin:10px;
-                min-height:200px;
-                min-width: 300px;
-            }
-            .betterviewgreen{
-                border:1px solid;
-                background-color: rgb(40, 207, 138);
-                padding:10px;
-                margin:10px;
-                min-height:200px;
-                min-width: 300px;
-            }
-        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>       
     </head> 
     <body>
         <div id="d1">
 
         </div>
         <script type="text/babel">
-            
-            ReactDOM.render(<First />,document.getElementById("d1"))
+            class Todolist extends React.Component{
+                constructor(){
+                    super();
+                    this.state={
+                        tasks:[
+                            {
+                                title:'car wash',
+                                status:false
+                            },
+                            {
+                                title:'lic premium',
+                                status:false
+                            },
+                            {
+                                title:'rent',
+                                status:true
+                            }
+                        ]
+                    }                    
+                }
+                deleteTask=(i)=>{
+                    var temp = this.state.tasks;
+                    temp.splice(i,1);
+                    this.setState({tasks:[...temp]})
+                }
+                render(){
+                    return(
+                        <div class="container p-4">
+                           {
+                            this.state.tasks.map((t,i)=>{
+                                return(
+                                    <Task task={t} i={i} delTask={this.deleteTask}/>
+                                )
+                            })
+                           }                           
+                        </div>
+                        
+                    )
+                }
+            }
+            class Task extends React.Component{
+                render() {
+                    return (
+                        <div class="card m-4">
+                            <div class="card-body">
+                                {this.props.task.title}
+                                <button onClick={()=>{this.props.delTask(this.props.i)}}>Delete</button>
+                            </div>
+                        </div>
+                    );
+                }
+            }
+            ReactDOM.render(<Todolist />,document.getElementById("d1"))
         </script>
     </body>
 </html>
